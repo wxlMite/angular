@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+.wrap{
+    display: flex;
+    flex-direction: row;
+}
+/* 左边导航栏样式 */
+.leftBar{
+    width: 255px;
+    padding: 10px; 
+    box-sizing: border-box;
+    background: #4e73df;
+    color:#ffffff;
+    min-height: 100vh;/*设置段落的最小高度*/
+   
+    
+}
+.leftBar1{
+    /* width: 255px; */
+    width: 10rem;
+    /* padding: 10px; */
+    /* box-sizing: border-box; */
+    background: #4e73df;
+    color:#ffffff;
+    min-height: 100vh;/*设置段落的最小高度*/
+    display:table;
+    /* overflow:hidden; */
+    
+}
+.leftBar1 li{
+    vertical-align:middle;
+    display:table-cell;
+}
+.leftBar1 h1{
+    text-align: center;
+}
+.leftBar1 .left-span{
+    margin-left: 10px;
+    color:#ffffff;
+    display: block;
+    text-align: center;  
+}
+.leftBar1 .tuLeft{
+    
+    display: block;
+    text-align: center;
+}
+.leftBar1 .home-sb{
+    display: none;
+}
+.showUl1 .collapse-box{
+    background: #928f8f;
+    width: 192px;
+    height: 118px;
+    border-radius: 5px;
+    margin-top: -15px;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: black;
+    position: absolute;
+    left: 110px;
+    display: none;
+}
+.showUl1 .show{
+    position: relative;
+}
+
+
+.leftBar .left-span{
+    margin-left: 10px;
+    color:#ffffff;
+    
+}
+.leftBar .home-box{
+    height: 75px;
+
+}
+.home-box .tu1{
+    font-size: 36px!important;
+    color: #ffffff!important;
+    margin-left: 10px;
+    position: relative;
+    padding-top: 10px;
+    box-sizing: border-box;
+  
+}
+/* .leftBar .left-span{
+    margin-left: 10px;
+    color:#ffffff;
+    
+} */
+.leftBar .tu2{
+   color:rgba(255,255,255,1)!important;
+}
+.leftBar .tu{
+    color: rgba(255,255,255,.15);
+    font-size: 15px;
+
+}
+.changetu{
+    font-size: 37px;
+    color: rgba(255,255,255,.18);
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: -20px;
+    transform: rotate(180deg);
+
+}
+
+.showUl .collapse-box{
+    background: #ffffff;
+    width: 192px;
+    height: 118px;
+    border-radius: 5px;
+    margin-top: -15px;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: black;
+    display: none;
+}
+
+
+
+.collapse-box h6{
+    text-align: center;
+    color: rgba(27, 24, 24, 0.18);
+}
+.collapse-item{
+    height: 30px!important;
+    line-height: 30px!important;
+    color: #000000;
+}
+.home-sb{
+    position: absolute;
+    left: 55px;
+    top: 15px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+   
+}
+
+
+.leftBar a{
+    width: 100%;
+    display:block;
+    text-decoration: none;
+    height: 50px; 
+    line-height: 50px;
+}
+.leftBar a:hover{
+   cursor: pointer;
+   
+    
+}
+.leftBar a:hover .tuLeft{
+    color: rgba(255,255,255,1)!important;
+    transition: 0.2s;
+}
+.leftBar .tuRight{
+    float: right;
+    margin-top: 10px;
+  
+}
+.rightBar{
+    width: 100%;
+    min-height: 100vh;
+    background: #f8f9fc;
+ 
+}
+.h1 {
+    font-size: 1px;
+    color: rgba(255,255,255,.18);
+    font-weight: 800;
+}
+.leftBar .leftMenu-box{
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.rightBar>nav{
+    width: 100%;
+    background: #ffffff;
+    height: 70px;
+    box-shadow: 0px 10px 10px 0 rgba(58,59,69,.15);
+}
+.leftBar .leftMenu-box>span{
+    font-size: .85rem;
+    display: inline
+}

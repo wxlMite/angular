@@ -1,0 +1,9 @@
+$(document).ready(function(){
+  $(".hide").click(function(){
+    if($(".hide").style.display=="none"){
+        $(".hide").show();
+    }else{
+        $(".hide").hide();
+    }
+  });
+});

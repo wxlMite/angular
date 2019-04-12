@@ -3,13 +3,172 @@
     <head>
         <meta charset="utf-8"/>
         <title></title>
-        <link rel="stylesheet" href="disk/style.css">
-     </head>
-        <body ng-app="App"><!--  启动angular-->
-            <div ui-view></div> <!--控制路由的节点-->
+        <link rel="stylesheet" href="disk/style.css" >
+        
+        
+        <body ng-app="App" class="wrap"><!--  启动angular-->
+            
+            <section class="leftBar">
+                <article class="home-box">
+                 <a class="home-a"><i class="glyphicon glyphicon-copyright-mark tu tu1 tuLeft"><span class="home-sb">SBADMIN</span></i></a>  
+                </article>
+                <div class="leftMenu-box"><ul><li class="show"><a ><i  class="glyphicon glyphicon-dashboard tu tu2 tuLeft"><span class="left-span">DashBoard</span></i><i ng-show="flase" class="glyphicon glyphicon-menu-right"></i></a></li></ul></div>
+                <div class="leftMenu-box">
+                     <h1 class="h1">INTERFACE</h1>
+                      <ul ul class="showUl">
+                          <li class="show">
+                            <a  class="leftMenu-slideBtn"> 
+                            <i class="glyphicon glyphicon-cog tu tuLeft"></i>
+                            <span class="left-span">Components</span>
+                            <i class="glyphicon glyphicon-menu-right tu tuRight"></i> 
+                            </a>
+                            <div class="collapse-box">
+                                    <h6>CUSTOM COMPONENTS:</h6>
+                                    <a class="collapse-item " >Buttons</a>
+                                    <a class="collapse-item ">Cards</a>
+                            </div>
+                          </li>
+                        <li class="show">
+                            <a class="leftMenu-slideBtn">
+                                <i class="glyphicon glyphicon-wrench tu tuLeft"></i>
+                                <span  class="left-span">Unitiles</span>
+                                <i class="glyphicon glyphicon-menu-right tu tuRight"></i>
+                            </a>
+                            <div class="collapse-box">
+                                <h6>CUSTOM COMPONENTS:</h6>
+                                <a class="collapse-item " >Buttons</a>
+                                <a class="collapse-item ">Cards</a>
+                            </div>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="leftMenu-box">
+                    <h1 class="h1">ADDONS</h1>
+                    <ul class="showUl">
+                        <li class="show">
+                            <a class="leftMenu-slideBtn">
+                                <i class="glyphicon glyphicon-credit-card tu tuLeft"> </i>
+                                <span class="left-span">Page</span>
+                                <i class="glyphicon glyphicon-menu-right tu tuRight"></i>
+                            </a>
+                            <div class="collapse-box">
+                                <h6>CUSTOM COMPONENTS:</h6>
+                                <a class="collapse-item " >Buttons</a>
+                                <a class="collapse-item ">Cards</a>
+                            </div>
+                        </li>
+                        <li class="show">
+                            <a class="leftMenu-slideBtn">
+                                <i class="glyphicon glyphicon-stats tu tuLeft"> </i>
+                                <span class="left-span">Char</span>
+                           </a>
+                        
+                        </li>
+                        <li class="show">
+                            <a class="leftMenu-slideBtn">
+                                <i class="glyphicon glyphicon-barcode tu tuLeft"> </i>
+                                <span class="left-span">Table</span>
+                            </a>
+           
+                        </li>
+                    </ul>  
+                </div>
+                <div class="leftMenu-box">
+                    <a class="change"><li class="glyphicon glyphicon-play-circle changetu"></li></a>
+                </div>
+                             
+                
+            </section>
+            <section class="rightBar">
+                <nav></nav>
+                <article><div ui-view></div></article>
+            </section>
             
         </body>
    <script src="disk/vendors.js"></script>
    <script src="disk/bundle.js"></script>
+   <script>
+    window.onload=function(){
+        var oUl=document.querySelectorAll(".showUl");
+        var click=document.querySelectorAll(".leftMenu-slideBtn");
+        var hide=document.querySelectorAll(".collapse-box");
+        var tuRight=document.querySelectorAll(".tuRight");
+        var changetu=document.querySelector(".changetu");
+        changetu.flage=true;
+        var leftBar=document.querySelector(".leftBar");
+
+        function $(str){
+            var element=document.querySelectorAll(str);
+            return element;
+        }
+        for(var i=0;i<click.length;i++){
+            
+          click[i].onclick=function(){ 
+       
+            var bt=this.parentNode.querySelector(".collapse-box");//this.parentNode获取到的是click下的父类元素li，再通过li获取到当前隐藏的节点
+            var flage=bt.style.display=="none";//保存隐藏节点的初始值
+        
+            for(var j=0;j<hide.length;j++){
+                // 初始化值，当鼠标点击其他元素时，该循环可以使上一次点击的元素的属性初始化为一开始设置的属性
+                tuRight[j].style.transform="rotate(0deg)";
+                hide[j].style.display="none"; 
+            }
+            for(var i=0;i<oUl.length;i++){
+                  oUl[i].className="showUl";
+                }
+       
+            if(flage){
+                if(!changetu.flage){
+            for(var i=0;i<oUl.length;i++){
+                  oUl[i].className="showUl1";
+                }
+                  bt.style.display="block";
+                }
+                bt.style.display="block";
+                this.querySelector(".tuRight").style.transform="rotate(90deg)";
+            
+        }else{
+                bt.style.display="none";
+
+            }
+           
+            
+        }
+    }
+
+    changetu.onclick=function changeWidth(){
+        this.style.transform="rotate(180deg)";
+        for(var i=0;i<tuRight.length;i++){
+            tuRight[i].style.display="block";
+            }
+            for(var j=0;j<hide.length;j++){
+                // 初始化值，当鼠标点击其他元素时，该循环可以使上一次点击的元素的属性初始化为一开始设置的属性
+                tuRight[j].style.transform="rotate(0deg)";
+                hide[j].style.display="none"; 
+            }
+       
+        if(this.flage){
+            leftBar.style.width="10rem";
+            this.style.transform="rotate(0deg)";
+            this.flage=false;
+            leftBar.className += " leftBar1";
+            for(var i=0;i<tuRight.length;i++){
+            tuRight[i].style.display="none";
+            }
+        }
+        else{
+            leftBar.classList.remove("leftBar1");
+            // HTMT5新增
+            //    增加：document.getElementById("myDIV").classList.add("mystyle", "anotherClass", "thirdClass");
+            //    去除：document.getElementById("myDIV").classList.remove("mystyle");
+
+            leftBar.style.width="255px";
+            this.flage=true;
+        }
+       
+
+    }
+}
+   </script>
     
 </html>
